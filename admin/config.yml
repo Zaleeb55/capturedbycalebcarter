@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: GITHUB_USERNAME/capturedbycalebcarter
+  branch: main
+  base_url: https://api.netlify.com
+  commit_messages:
+    create: "New post: {{slug}}"
+    update: "Edit post: {{slug}}"
+    delete: "Delete post: {{slug}}"
+    uploadMedia: "Upload photo: {{path}}"
+    deleteMedia: "Delete photo: {{path}}"
+
+site_url: https://capturedbycalebcarter.netlify.app
+display_url: https://capturedbycalebcarter.netlify.app
+logo_url: /img/headshot.jpg
+
+media_folder: img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: posts
+    label: Blog posts
+    label_singular: Post
+    description: Your Sideline Notes posts. Each post needs its own date, one per day for class credit.
+    folder: posts
+    format: json
+    extension: json
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{date | date('MMM D, YYYY')}} · {{title}}"
+    sortable_fields: [date, title, category]
+    view_filters:
+      - label: Spiritual prompts
+        field: category
+        pattern: Spiritual prompt
+      - label: Professional prompts
+        field: category
+        pattern: Professional prompt
+      - label: Student's choice
+        field: category
+        pattern: "Student's choice"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Date written
+        name: date
+        widget: datetime
+        date_format: "MMMM D, YYYY"
+        time_format: false
+        format: "YYYY-MM-DD"
+        picker_utc: true
+      - label: Type
+        name: category
+        widget: select
+        options: ["Spiritual prompt", "Professional prompt", "Student's choice", "Portfolio"]
+        default: "Student's choice"
+      - label: Cover photo
+        name: cover
+        widget: image
+        required: false
+        choose_url: false
+      - label: Post
+        name: body
+        widget: markdown
+        buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list]
+        editor_components: [image]

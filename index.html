@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Captured by Caleb Carter | Sports Photography, Salt Lake Valley</title>
+<meta name="description" content="Sports photography for athletes, parents, high schools, and club teams in the Salt Lake Valley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#0E1822;      /* stadium night */
+  --surface:#15232F;     /* raised panel */
+  --line:#24394A;        /* borders */
+  --text:#EEF1EC;        /* chalk white */
+  --muted:#A3B3BF;       /* secondary text */
+  --amber:#E9B34C;       /* golden-hour accent */
+  --amber-ink:#1B1406;   /* text on amber */
+  --display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --body:"Public Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --max:1200px;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ground:#0E1822;--surface:#15232F;--text:#EEF1EC}}
+:root[data-theme="dark"]{--ground:#0E1822;--surface:#15232F;--text:#EEF1EC}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--amber)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(14,24,34,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.01em;color:var(--text);text-decoration:none;line-height:1}
+.brand span{color:var(--muted);font-weight:500}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+nav a{display:inline-block;padding:10px 14px;color:var(--muted);text-decoration:none;font-weight:500;font-size:16px;border-radius:6px;min-height:44px}
+nav a:hover{color:var(--text)}
+nav a[aria-current="page"]{color:var(--text);box-shadow:inset 0 -3px 0 var(--amber);border-radius:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:6px;font-family:var(--body);font-weight:600;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:var(--amber);color:var(--amber-ink)}
+.btn-primary:hover{background:#F2C468}
+.btn-ghost{border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--muted)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* Type */
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;margin:0;letter-spacing:.005em}
+h2{font-size:clamp(38px,5vw,56px)}
+h3{font-size:28px;font-weight:600}
+.lede{font-size:19px;color:var(--muted);max-width:60ch;margin:16px 0 0}
+section{padding:88px 0}
+.page[hidden]{display:none}
+
+/* Hero */
+.hero{position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;padding:0;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,24,34,.15) 30%,rgba(14,24,34,.94) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:64px;width:100%}
+.hero h1{font-size:clamp(54px,9vw,120px);max-width:12ch;text-transform:none}
+.hero p{font-size:clamp(18px,2vw,21px);max-width:44ch;margin:18px 0 30px;color:#DDE3E6}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Who */
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.who div{padding:26px 24px 0 0}
+.who div+div{padding-left:24px;border-left:1px solid var(--line)}
+.who h3{font-size:26px;margin-bottom:8px}
+.who p{margin:0;color:var(--muted);font-size:16px}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:10px;margin-top:40px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;overflow:hidden;border-radius:4px;background:var(--surface)}
+.gallery button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery button:hover img{transform:scale(1.03)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 10px;font-size:14px;color:#E6ECEF;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.gallery .s-a{grid-column:span 4;grid-row:span 2}
+.gallery .s-b{grid-column:span 2;grid-row:span 2}
+.gallery .s-c{grid-column:span 2;grid-row:span 1}
+.gallery .s-d{grid-column:span 3;grid-row:span 2}
+
+
+/* Games */
+.game{margin-top:56px}
+.game+.game{padding-top:48px;border-top:1px solid var(--line)}
+.game-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.game-head h3{font-size:32px}
+.game-head p{margin:0;color:var(--muted);font-size:16px;flex:1 1 280px}
+.game-head .count{font-size:14px;font-weight:600;color:var(--amber)}
+.game .gallery{margin-top:20px}
+.gallery .s-g{grid-column:span 3;grid-row:span 1}
+.badge{position:absolute;top:12px;left:12px;font-size:13px;font-weight:600;color:var(--amber-ink);background:var(--amber);padding:3px 10px;border-radius:99px}
+
+.gallery.pg{grid-template-columns:repeat(3,1fr);grid-auto-rows:auto;grid-auto-flow:dense}
+.gallery.pg button{aspect-ratio:3/2}
+.gallery.pg button.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.gallery.pg2{grid-template-columns:1fr 1fr}
+.sub{font-family:var(--display);font-size:22px;font-weight:600;margin:28px 0 0;color:var(--muted)}
+@media (max-width:620px){.gallery.pg{grid-template-columns:1fr 1fr}.gallery.pg button.big{grid-column:span 2;grid-row:span 1;aspect-ratio:3/2}}
+/* Book */
+.book{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.book-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.steps li:first-child{padding-top:0}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:700;font-size:30px;color:var(--amber);line-height:1}
+.steps strong{display:block;font-weight:600}
+.steps span{color:var(--muted);font-size:16px}
+.checklist{margin:22px 0 28px;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;color:var(--text)}
+.checklist li{padding-left:22px;position:relative}
+.checklist li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--amber)}
+
+/* Pricing */
+.page-head{padding:72px 0 8px}
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.tier{border:1px solid var(--line);border-radius:8px;padding:28px 24px;display:flex;flex-direction:column;background:var(--ground)}
+.tier.feature{border-color:var(--amber);background:var(--surface)}
+.tier .tag{align-self:flex-start;font-size:13px;font-weight:600;color:var(--amber-ink);background:var(--amber);padding:3px 10px;border-radius:99px;margin-bottom:14px}
+.tier h3{font-size:30px}
+.tier .for{color:var(--muted);font-size:15px;margin:6px 0 18px;min-height:3.2em}
+.price{font-family:var(--display);font-weight:700;font-size:60px;line-height:1}
+.price small{font-family:var(--body);font-size:15px;font-weight:500;color:var(--muted);margin-left:4px}
+.tier ul{list-style:none;padding:0;margin:20px 0 26px;flex:1}
+.tier li{padding:8px 0;border-top:1px solid var(--line);font-size:15.5px}
+.tier .btn{width:100%}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
+.notes h3{font-size:22px;margin-bottom:6px}
+.notes p{margin:0;color:var(--muted);font-size:15.5px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:72px}
+.pair img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px}
+
+.tier-group{font-size:clamp(28px,3.5vw,36px);margin-top:48px;color:var(--text)}
+.tier-group+.tiers{margin-top:20px}
+.tiers-two{grid-template-columns:repeat(2,1fr)}
+.tier .tag+h3{margin-top:0}
+/* About */
+.about-grid{display:grid;grid-template-columns:360px 1fr;gap:64px;align-items:start}
+.headshot{aspect-ratio:4/5;border-radius:8px;background:var(--surface);border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);text-align:center;padding:24px;position:sticky;top:100px}
+.headshot .initials{font-family:var(--display);font-weight:700;font-size:96px;color:var(--amber);line-height:1}
+.headshot.has-photo{padding:0;border:0;background:none}
+.headshot img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.about-copy h1{font-size:clamp(56px,8vw,96px)}
+.about-copy p{max-width:62ch;margin:0 0 18px}
+.about-copy .lede{margin-bottom:28px;color:var(--text)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:36px 0;border-top:1px solid var(--line)}
+.facts div{padding:18px 0;border-bottom:1px solid var(--line)}
+.facts div:nth-child(odd){padding-right:20px}
+.facts dt{color:var(--muted);font-size:14px}
+.facts dd{margin:2px 0 0;font-weight:600}
+.sports{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 30px;padding:0;list-style:none}
+.sports li{padding:7px 14px;border:1px solid var(--line);border-radius:99px;font-size:15px;color:var(--muted)}
+.sports li.done{border-color:var(--amber);color:var(--text)}
+.wide{margin-top:24px}
+.wide img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:50% 45%;border-radius:4px}
+
+
+/* Blog */
+.blog-title{font-size:clamp(56px,8vw,96px)}
+.post-list{display:grid;gap:24px;margin-top:44px}
+.post-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text);text-decoration:none}
+.post-card:hover{border-color:var(--muted)}
+.post-card img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px}
+.post-card h2{font-size:clamp(30px,3.4vw,40px);margin:6px 0 10px}
+.post-card p{margin:0;color:var(--muted)}
+.post-card .more{display:inline-block;margin-top:14px;color:var(--amber);font-weight:600}
+.meta{font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--amber)!important;margin:0}
+.post{padding:56px 0 88px}
+.post-wrap{max-width:760px}
+.post h1{font-size:clamp(44px,6vw,72px);margin:10px 0 0}
+.back{display:inline-flex;align-items:center;min-height:44px;margin-bottom:18px;color:var(--muted);text-decoration:none;font-weight:500}
+.back:hover{color:var(--text)}
+.post-hero{margin:40px auto 8px;max-width:1000px}
+.post-hero img,.post-inline img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
+.post figcaption{color:var(--muted);font-size:14px;margin-top:10px}
+.post-body h2{font-size:clamp(28px,3vw,36px);margin:44px 0 12px}
+.post-body p,.post-body li{font-size:18px;line-height:1.7}
+.post-body p{margin:0 0 18px}
+.post-body ul{padding-left:22px;margin:0 0 18px}
+.post-body sup a{text-decoration:none;font-weight:600;padding:0 2px}
+.post-inline{margin:32px 0}
+.post-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:28px 0 8px}
+.post-pair img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px}
+.callout{border:1px solid var(--amber);border-radius:8px;padding:22px 26px;margin:36px 0;background:var(--surface)}
+.callout h3{font-size:26px;margin-bottom:10px}
+.callout ul{margin:0}
+.sources-title{border-top:1px solid var(--line);padding-top:32px}
+.sources{padding-left:22px;margin:0}
+.sources li{font-size:15.5px!important;color:var(--muted);margin-bottom:10px;line-height:1.6}
+@media (max-width:760px){.post-card{grid-template-columns:1fr;gap:16px}.post-pair{grid-template-columns:1fr}}
+
+.blog-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.filters:empty{display:none}
+.chip{all:unset;cursor:pointer;padding:8px 16px;min-height:28px;border:1px solid var(--line);border-radius:99px;font-size:15px;color:var(--muted)}
+.chip[aria-pressed="true"]{border-color:var(--amber);color:var(--text)}
+.chip:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.post-card.no-cover{grid-template-columns:1fr}
+.empty{color:var(--muted);margin-top:32px}
+.post-tools{margin-top:20px}
+.post-body h3{font-size:24px;margin:28px 0 10px}
+.post-body ol{padding-left:24px;margin:0 0 18px}
+.post-body blockquote{margin:24px 0;padding:4px 0 4px 20px;border-left:3px solid var(--amber)}
+.post-body blockquote p{font-style:italic;color:var(--text)}
+.post-body a{color:var(--amber)}
+.post-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+.post-nav:empty{display:none}
+.post-nav a{display:block;color:var(--text);text-decoration:none;font-weight:600;line-height:1.4}
+.post-nav a span{display:block;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.post-nav .next{grid-column:2;text-align:right}
+.write-form{display:grid;gap:18px;margin-top:28px}
+.write-form label{display:grid;gap:6px;font-weight:600;font-size:15px}
+.write-form .row{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:16px}
+.write-form input,.write-form select,.write-form textarea{font:inherit;font-weight:400;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-height:48px;width:100%}
+.write-form textarea{font-size:17px;line-height:1.7;resize:vertical}
+.write-form input:focus,.write-form select:focus,.write-form textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
+.write-form input[type=date]{color-scheme:dark}
+.fmt{color:var(--muted);font-size:15px}
+.fmt summary{cursor:pointer;min-height:32px}
+.fmt code{color:var(--text);background:var(--surface);padding:1px 6px;border-radius:4px}
+.words{margin:0;color:var(--muted);font-size:14px}
+.warn{margin:0;color:var(--amber);font-size:15px}
+.status{margin:0;min-height:1.6em;color:var(--muted)}
+.write-form button.btn-ghost{background:transparent}
+.post-hero{margin-bottom:32px!important}
+.btn.danger{border-color:#7a3b3b;color:#f0b4b4}
+.btn:disabled{opacity:.6;cursor:wait}
+.readonly-note{color:var(--muted);margin-top:24px}
+.preview{margin-top:40px;padding-top:32px;border-top:1px dashed var(--line)}
+.preview h1{font-size:clamp(36px,5vw,56px);margin:8px 0 20px}
+@media (max-width:760px){.write-form .row{grid-template-columns:1fr}.post-nav{grid-template-columns:1fr}.post-nav .next{grid-column:1;text-align:left}}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:40px 0}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.social{display:flex;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:6px;color:var(--text);text-decoration:none;font-size:15px}
+.social a:hover{border-color:var(--muted)}
+.social svg{width:18px;height:18px}
+.fine{color:var(--muted);font-size:14px;margin:0}
+
+/* Lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:94vw;max-height:92vh}
+dialog::backdrop{background:rgba(5,10,15,.92)}
+dialog img{max-width:94vw;max-height:86vh;object-fit:contain;border-radius:4px}
+dialog p{color:var(--muted);margin:10px 0 0;text-align:center;font-size:15px}
+.close{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--ground);color:var(--text);font-size:26px;cursor:pointer;line-height:1}
+
+@media (max-width:960px){
+  .who{grid-template-columns:1fr 1fr}
+  .who div:nth-child(3){padding-left:0;border-left:0}
+  .tiers{grid-template-columns:1fr 1fr}
+  .book-grid,.about-grid{grid-template-columns:1fr;gap:40px}
+  .headshot{position:static;max-width:320px}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .gallery .s-a{grid-column:span 2;grid-row:span 2}
+  .gallery .s-b{grid-column:span 1;grid-row:span 2}
+  .gallery .s-c,.gallery .s-d,.gallery .s-g{grid-column:span 1;grid-row:span 1}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .bar{padding:10px 0;justify-content:center}
+  nav a{padding:10px 12px}
+  .who,.tiers,.tiers-two,.notes,.facts,.checklist,.pair{grid-template-columns:1fr}
+  .who div,.who div+div{padding:20px 0 0;border-left:0}
+  .facts div:nth-child(odd){padding-right:0}
+  .hero{min-height:78vh}
+  .gallery{grid-auto-rows:140px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery img{transition:none}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#home">Captured <span>by Caleb Carter</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#home" data-page="home">Home</a></li>
+        <li><a href="#pricing" data-page="pricing">Pricing</a></li>
+        <li><a href="#about" data-page="about">About Me</a></li>
+        <li><a href="#blog" data-page="blog">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= HOME ================= -->
+<div class="page" id="page-home">
+  <section class="hero" aria-labelledby="hero-title">
+    <img src="img/hero.jpg" alt="A soccer forward in a blue and white striped jersey fights through a defender to strike the ball">
+    <div class="wrap">
+      <h1 id="hero-title">They only play this game once.</h1>
+      <p>Sports photography for athletes, parents, and teams across the Salt Lake Valley. Tell me the game and I'll be on the sideline.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#book">Book a game</a>
+        <a class="btn btn-ghost" href="#pricing">See pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="who-title">
+    <div class="wrap">
+      <h2 id="who-title">Who I shoot for</h2>
+      <div class="who">
+        <div><h3>Parents</h3><p>You watch the game. I'll catch the moments you'd miss behind a phone screen.</p></div>
+        <div><h3>High schools</h3><p>Game-day coverage for athletics, yearbook, and team social media.</p></div>
+        <div><h3>Club teams</h3><p>Full-roster galleries every family on the team can download.</p></div>
+        <div><h3>Recruits</h3><p>Sharp action shots built for recruiting profiles and coach outreach.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="work-title" style="padding-top:0">
+    <div class="wrap">
+      <h2 id="work-title">Recent work</h2>
+
+      <div class="game">
+        <div class="game-head"><h3>Salt Lake Shred vs. Oregon Steel</h3></div>
+        <div class="gallery pg">
+          <button class="big"><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-06.jpg" alt="Shred number 15 looks for a throw while two Oregon Steel players mark him" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-01.jpg" alt="Shred defender stretches out to mark a throw, crowd blurred behind" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-09.jpg" alt="Shred number 15 and number 89 high-five in front of the crowd" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-02.jpg" alt="Oregon Steel player leaps for the disc as Shred defenders close in" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-03.jpg" alt="Oregon Steel number 42 cuts upfield in front of a packed grandstand" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-04.jpg" alt="Number 42 hauls in the disc as a Shred defender closes" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-05.jpg" alt="Shred number 15 chases Oregon Steel's number 42 downfield at golden hour" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-08.jpg" alt="Shred teammates slap hands after scoring a point" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-11.jpg" alt="A Shred handler releases a throw in front of the stands" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-10.jpg" alt="Shred players line up in front of the home crowd" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-12.jpg" alt="Shred number 15 holds the disc and sizes up the field" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/shred-vs-oregon-steel-13.jpg" alt="The Shred roster gathers on the field in front of the fans" loading="lazy"></figure></button>
+        </div>
+      </div>
+
+      <div class="game">
+        <div class="game-head"><h3>BYU vs. Utah</h3></div>
+        <div class="gallery pg">
+          <button class="big"><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-14.jpg" alt="BYU number 19 leaps over a sliding Utah defender" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-05.jpg" alt="BYU number 27 rises above the pack for a header" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-15.jpg" alt="A Utah player hurdles a BYU defender who went to ground for the ball" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-17.jpg" alt="BYU number 17 muscles through two Utah defenders" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-06.jpg" alt="BYU number 12 holds off Utah number 13 near the goal" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-01.jpg" alt="BYU attacker in blue stripes dribbles past a Utah defender in red" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-16.jpg" alt="A BYU player whips in a corner kick beside the corner flag" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-19.jpg" alt="BYU and Utah players race for a loose ball in front of the crowd" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-02.jpg" alt="BYU and Utah players battle for the ball as number 16 watches" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-18.jpg" alt="BYU number 17 drives low past a Utah defender" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-20.jpg" alt="BYU number 5 shields the ball from a Utah defender" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-21.jpg" alt="A BYU midfielder charges toward the camera calling for the ball" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-22.jpg" alt="BYU and Utah players collide going for a header in the box" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-07.jpg" alt="BYU winger winds up to strike the ball" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-09.jpg" alt="A BYU player drops low to shield the ball from a Utah defender" loading="lazy"></figure></button>
+        </div>
+        <div class="gallery pg pg2">
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-bw-01.jpg" alt="Black and white with BYU blue: number 27 rises for a header" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-bw-02.jpg" alt="Black and white with BYU blue: number 12 holds off Utah number 13" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-bw-03.jpg" alt="Black and white with BYU blue: a Utah defender lunges to tackle a BYU dribbler" loading="lazy"></figure></button>
+          <button><figure style="margin:0;height:100%"><img src="img/byu-vs-utah-bw-04.jpg" alt="Black and white with BYU blue: number 5 eyes the ball as a teammate closes in" loading="lazy"></figure></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="book" aria-labelledby="book-title">
+    <div class="wrap book-grid">
+      <div>
+        <h2 id="book-title">Book your game</h2>
+        <p class="lede">Open dates go fast during the season. Send one message and your game is on my calendar.</p>
+        <ul class="checklist" aria-label="What to include in your message">
+          <li>The sport and the date</li>
+          <li>Where it's played</li>
+          <li>Athlete name and number</li>
+          <li>Package you want</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            Message me on Instagram</a>
+          <a class="btn btn-ghost" href="#pricing">Compare packages</a>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><div><strong>Send your game details</strong><span>A quick DM with the sport, date, and location.</span></div></li>
+        <li><div><strong>I confirm within 24 hours</strong><span>We lock in the package and who I'm focusing on.</span></div></li>
+        <li><div><strong>I shoot the game</strong><span>Sideline coverage from warmups to the final whistle.</span></div></li>
+        <li><div><strong>Your gallery arrives in 72 hours</strong><span>Edited, full-resolution photos ready to download and share.</span></div></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<!-- ================= PRICING ================= -->
+<div class="page" id="page-pricing" hidden>
+  <div class="wrap page-head">
+    <h1 style="font-size:clamp(56px,8vw,96px)">Pricing</h1>
+    <p class="lede">Straightforward packages priced for families and school budgets. Every package includes edited, full-resolution photos in a private online gallery.</p>
+
+    <h2 class="tier-group">For athletes and families</h2>
+    <div class="tiers">
+      <article class="tier">
+        <h3>Game Day</h3>
+        <p class="for">One athlete, one game.</p>
+        <div class="price">$100</div>
+        <ul>
+          <li>Full game coverage of your athlete</li>
+          <li>25+ edited photos</li>
+          <li>Gallery delivered in 72 hours</li>
+          <li>Personal print and social rights</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">Book Game Day</a>
+      </article>
+      <article class="tier feature">
+        <span class="tag">Best value</span>
+        <h3>Season Pass</h3>
+        <p class="for">Four games for one athlete. $75 a game, saves $100.</p>
+        <div class="price">$300</div>
+        <ul>
+          <li>Four games across the season</li>
+          <li>25+ edited photos per game</li>
+          <li>Priority booking on big games</li>
+          <li>End-of-season highlight set</li>
+        </ul>
+        <a class="btn btn-primary" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">Book Season Pass</a>
+      </article>
+      <article class="tier">
+        <span class="tag">Best for recruits</span>
+        <h3>Recruiting Profile</h3>
+        <p class="for">For high school athletes getting in front of college coaches.</p>
+        <div class="price">$200</div>
+        <ul>
+          <li>Two games of action coverage</li>
+          <li>15-minute on-field portrait session</li>
+          <li>40+ edited photos</li>
+          <li>10 selects cropped for recruiting profiles and social</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">Book Recruiting Profile</a>
+      </article>
+      <article class="tier">
+        <h3>Tournament Day</h3>
+        <p class="for">Wrestling, track, volleyball, swim, and other all-day events.</p>
+        <div class="price">$150</div>
+        <ul>
+          <li>One athlete, every match or event that day</li>
+          <li>30+ edited photos</li>
+          <li>Gallery delivered in 72 hours</li>
+          <li>Personal print and social rights</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">Book Tournament Day</a>
+      </article>
+    </div>
+
+    <h2 class="tier-group">For teams, clubs, and schools</h2>
+    <div class="tiers tiers-two">
+      <article class="tier feature">
+        <span class="tag">No cost to the team</span>
+        <h3>Team Gallery</h3>
+        <p class="for">Free for the team to book. Families buy only the photos they want.</p>
+        <div class="price">$25<small>/ athlete</small></div>
+        <ul>
+          <li>I shoot the whole game, every player</li>
+          <li>Private team gallery on Pixieset</li>
+          <li>$25 for your athlete's photos, $40 for the full gallery</li>
+          <li>Perfect for rec leagues and youth teams</li>
+        </ul>
+        <a class="btn btn-primary" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">Book a Team Gallery</a>
+      </article>
+      <article class="tier">
+        <h3>Team Coverage</h3>
+        <p class="for">High school and club teams. Every player, one gallery.</p>
+        <div class="price">$275<small>/ game</small></div>
+        <ul>
+          <li>Full-roster game coverage</li>
+          <li>100+ edited photos</li>
+          <li>Shared gallery every family can download</li>
+          <li>Use rights for team and school social media</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">Book Team Coverage</a>
+      </article>
+    </div>
+
+    <div class="notes">
+      <div><h3>Teammates save</h3><p>When three or more families from one team book Game Day for the same game, each pays $80.</p></div>
+      <div><h3>Where I shoot</h3><p>Travel is included anywhere in the Salt Lake Valley and Utah County. Farther games add a small travel fee.</p></div>
+      <div><h3>Full seasons</h3><p>Schools and clubs booking a whole season get a custom quote. Send me your schedule.</p></div>
+    </div>
+
+    <div class="pair">
+      <img src="img/pair-1.jpg" alt="An ultimate team in black and gold talks strategy on the field before a point" loading="lazy">
+      <img src="img/pair-2.jpg" alt="A soccer attacker in white number 17 dribbles at two defenders in red" loading="lazy">
+    </div>
+  </div>
+  <section style="padding-top:64px">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:48px">
+      <div>
+        <h2>Got a game coming up?</h2>
+        <p class="lede" style="margin-top:8px">Send the date and I'll tell you if I'm open.</p>
+      </div>
+      <a class="btn btn-primary" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">Check my availability</a>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div class="page" id="page-about" hidden>
+  <section style="padding-top:72px">
+    <div class="wrap about-grid">
+      <div class="headshot has-photo"><img src="img/headshot.jpg" alt="Caleb Carter smiling at golden hour with mountains behind him"></div>
+      <div class="about-copy">
+        <h1>Hi, I'm Caleb.</h1>
+        <p class="lede">I'm a sports photographer based in South Jordan, Utah, and I started Captured by Caleb Carter to give athletes and families photos worth keeping long after the season ends.</p>
+        <p>I also work part-time in construction, installing fire sprinkler systems. That job taught me to show up early, work in any weather, and get the details right the first time. I bring the same habits to every sideline.</p>
+        <p>I'm also a student at Ensign College, studying communications with a focus on digital marketing, social media, and content creation. School is where I learn how great photos turn into stories that teams, schools, and athletes can actually use.</p>
+
+        <h3 style="margin-top:34px">Sports I've shot, and where I'm headed</h3>
+        <ul class="sports" aria-label="Sports">
+          <li class="done">Ultimate frisbee</li>
+          <li class="done">Men's soccer</li>
+          <li>Football</li>
+          <li>Basketball</li>
+          <li>Volleyball</li>
+          <li>Baseball and softball</li>
+          <li>Wrestling</li>
+          <li>Track and field</li>
+          <li>Lacrosse</li>
+        </ul>
+        <p>So far I've photographed professional ultimate frisbee under golden-hour stadium light and men's college soccer under the lights at night. My goal is simple: shoot every sport I can, from Friday night football to Saturday morning club games.</p>
+
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>South Jordan, Utah</dd></div>
+          <div><dt>Serving</dt><dd>Salt Lake Valley and Utah County</dd></div>
+          <div><dt>School</dt><dd>Ensign College, Communications</dd></div>
+          <div><dt>Camera</dt><dd>Sony a6700 with fast telephoto lenses</dd></div>
+        </dl>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="https://ig.me/m/capturedbycalebcarter" target="_blank" rel="noopener">Book a game with me</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/caleb-carter-8a6a531a0/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap wide">
+      <img src="img/about-wide.jpg" alt="A soccer captain in a striped kit stands with hands on hips in front of a full stadium at night" loading="lazy">
+    </div>
+  </section>
+</div>
+<!-- ================= BLOG ================= -->
+
+<div class="page" id="page-blog" hidden>
+  <section class="page-head" style="padding-bottom:88px">
+    <div class="wrap">
+      <div class="blog-head">
+        <div>
+          <h1 class="blog-title">Sideline Notes</h1>
+          <p class="lede">Game recaps, editing breakdowns, faith, and lessons from learning to write and shoot better every week.</p>
+        </div>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter posts"></div>
+      <div class="post-list" id="post-list"></div>
+      <p class="empty" id="post-empty" hidden>No posts yet.</p>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-post" hidden>
+  <article class="post">
+    <div class="wrap post-wrap">
+      <a class="back" href="#blog">&larr; All posts</a>
+      <p class="meta" id="post-meta"></p>
+      <h1 id="post-title"></h1>
+    </div>
+    <figure class="post-hero wrap" id="post-cover" hidden><img alt=""></figure>
+    <div class="wrap post-wrap post-body" id="post-body"></div>
+    <div class="wrap post-wrap">
+      <nav class="post-nav" id="post-nav" aria-label="More posts"></nav>
+    </div>
+  </article>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#home">Captured <span>by Caleb Carter</span></a>
+      <p class="fine" style="margin-top:8px">Sports photography in South Jordan, Utah. &copy; 2026 Caleb Carter</p>
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/capturedbycalebcarter/" target="_blank" rel="noopener" aria-label="Instagram, @capturedbycalebcarter">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        Instagram</a>
+      <a href="https://www.linkedin.com/in/caleb-carter-8a6a531a0/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+        LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<dialog id="lb" aria-label="Photo viewer">
+  <button class="close" aria-label="Close photo">&times;</button>
+  <img alt="">
+  <p></p>
+</dialog>
+
+<script>
+(function(){
+  /* ---------- Posts data ---------- */
+  var POSTS=[],postsReady=false;
+  var PHOTOS=[
+    ['','No cover photo'],
+    ['img/hero.jpg','Hero: golden-hour action'],
+    ['img/headshot.jpg','Headshot'],
+    ['img/about-wide.jpg','Soccer captain at night'],
+    ['img/pair-1.jpg','Ultimate team huddle'],
+    ['img/pair-2.jpg','Soccer number 17 dribbling'],
+    ['img/byu-vs-utah-14.jpg','BYU vs. Utah: leap over defender'],
+    ['img/byu-vs-utah-17.jpg','BYU vs. Utah: number 17 drives'],
+    ['img/byu-vs-utah-05.jpg','BYU vs. Utah: header'],
+    ['img/byu-vs-utah-bw-01.jpg','BYU blue edit: header'],
+    ['img/byu-vs-utah-bw-02.jpg','BYU blue edit: number 12'],
+    ['img/byu-vs-utah-bw-03.jpg','BYU blue edit: tackle'],
+    ['img/byu-vs-utah-bw-04.jpg','BYU blue edit: number 5'],
+    ['img/shred-vs-oregon-steel-06.jpg','Shred: number 15 with the disc'],
+    ['img/shred-vs-oregon-steel-09.jpg','Shred: high five'],
+    ['img/shred-vs-oregon-steel-13.jpg','Shred: team in front of fans']
+  ];
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  function fmtDate(d){var p=(d||'').split('-');if(p.length!==3)return d||'';return MONTHS[+p[1]-1]+' '+(+p[2])+', '+p[0];}
+  function today(){var t=new Date();return t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');}
+  function words(s){var m=(s||'').trim().match(/\S+/g);return m?m.length:0;}
+  function sorted(){return POSTS.slice().sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:(b.created||0)-(a.created||0);});}
+  function byId(id){for(var i=0;i<POSTS.length;i++)if(POSTS[i].id===id)return POSTS[i];return null;}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function safeUrl(u){u=u.trim();return /^(https?:\/\/|#|\/?img\/|mailto:)/i.test(u)?u:null;}
+
+  /* ---------- Tiny markdown ---------- */
+  function inline(t){
+    t=esc(t);
+    t=t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,function(m,txt,u){
+      var url=safeUrl(u.replace(/&amp;/g,'&'));if(!url)return txt;
+      var ext=/^https?:/i.test(url);
+      return '<a href="'+esc(url)+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+txt+'</a>';
+    });
+    t=t.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*\s][^*]*)\*/g,'$1<em>$2</em>');
+    return t;
+  }
+  function md(src){
+    if(window.marked&&window.DOMPurify){return DOMPurify.sanitize(marked.parse(src||''),{ADD_ATTR:['target']});}
+    return mdLite(src);
+  }
+  function mdLite(src){
+    var lines=(src||'').replace(/\r/g,'').split('\n'),out=[],i=0;
+    while(i<lines.length){
+      var l=lines[i];
+      if(!l.trim()){i++;continue;}
+      var m;
+      if((m=l.match(/^(#{1,6})\s+(.*)/))){out.push(m[1].length<=2?'<h2>'+inline(m[2])+'</h2>':'<h3>'+inline(m[2])+'</h3>');i++;continue;}
+      if((m=l.match(/^!\[([^\]]*)\]\(([^)\s]+)\)\s*$/))){
+        var u=safeUrl(m[2]);
+        if(u)out.push('<figure class="post-inline"><img src="'+esc(u)+'" alt="'+esc(m[1])+'" loading="lazy">'+(m[1]?'<figcaption>'+esc(m[1])+'</figcaption>':'')+'</figure>');
+        i++;continue;
+      }
+      if(/^>\s?/.test(l)){var q=[];while(i<lines.length&&/^>\s?/.test(lines[i])){q.push(lines[i].replace(/^>\s?/,''));i++;}out.push('<blockquote><p>'+inline(q.join(' '))+'</p></blockquote>');continue;}
+      if(/^[-*]\s+/.test(l)){var ul=[];while(i<lines.length&&/^[-*]\s+/.test(lines[i])){ul.push('<li>'+inline(lines[i].replace(/^[-*]\s+/,''))+'</li>');i++;}out.push('<ul>'+ul.join('')+'</ul>');continue;}
+      if(/^\d+[.)]\s+/.test(l)){var ol=[];while(i<lines.length&&/^\d+[.)]\s+/.test(lines[i])){ol.push('<li>'+inline(lines[i].replace(/^\d+[.)]\s+/,''))+'</li>');i++;}out.push('<ol>'+ol.join('')+'</ol>');continue;}
+      var p=[];while(i<lines.length&&lines[i].trim()&&!/^(#{2,3}\s|>|[-*]\s|\d+[.)]\s|!\[)/.test(lines[i])){p.push(lines[i].trim());i++;}
+      out.push('<p>'+inline(p.join(' '))+'</p>');
+    }
+    return out.join('\n');
+  }
+  function excerpt(body){
+    var t=(body||'').split(/\n\s*\n/).map(function(s){return s.trim();}).filter(function(s){return s&&!/^(#|!\[|>|[-*]\s|\d+[.)]\s)/.test(s);})[0]||'';
+    t=t.replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[*_\\]/g,'').replace(/\s+/g,' ');
+    return t.length>190?t.slice(0,187).replace(/\s+\S*$/,'')+'…':t;
+  }
+
+  /* ---------- Blog list ---------- */
+  var activeCat='All';
+  function renderList(){
+    var list=document.getElementById('post-list'),f=document.getElementById('filters');
+    var cats=['All'];sorted().forEach(function(p){if(p.category&&cats.indexOf(p.category)<0)cats.push(p.category);});
+    if(cats.indexOf(activeCat)<0)activeCat='All';
+    f.innerHTML=cats.length>2?cats.map(function(c){return '<button type="button" class="chip" aria-pressed="'+(c===activeCat)+'" data-cat="'+esc(c)+'">'+esc(c)+'</button>';}).join(''):'';
+    var ps=sorted().filter(function(p){return activeCat==='All'||p.category===activeCat;});
+    list.innerHTML=ps.map(function(p){
+      var mins=Math.max(1,Math.round(words(p.body)/200));
+      return '<a class="post-card'+(p.cover?'':' no-cover')+'" href="#post/'+esc(p.id)+'">'+
+        (p.cover?'<img src="'+esc(p.cover)+'" alt="" loading="lazy">':'')+
+        '<div><p class="meta">'+esc(fmtDate(p.date))+(p.category?' &middot; '+esc(p.category):'')+' &middot; '+mins+' min read</p>'+
+        '<h2>'+esc(p.title)+'</h2><p>'+esc(excerpt(p.body))+'</p><span class="more">Read the post &rarr;</span></div></a>';
+    }).join('');
+    document.getElementById('post-empty').hidden=ps.length>0;
+  }
+  document.getElementById('filters').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;activeCat=b.dataset.cat;renderList();});
+
+  /* ---------- Single post ---------- */
+  function renderPost(id){
+    var p=byId(id);if(!p)return false;
+    document.getElementById('post-meta').textContent=fmtDate(p.date)+(p.category?' · '+p.category:'')+' · By Caleb Carter';
+    document.getElementById('post-title').textContent=p.title;
+    var cov=document.getElementById('post-cover');cov.hidden=!p.cover;
+    if(p.cover){var im=cov.querySelector('img');im.src=p.cover;im.alt='';}
+    var pb=document.getElementById('post-body');pb.innerHTML=md(p.body);
+    pb.querySelectorAll('a[href^="http"]').forEach(function(a){a.target='_blank';a.rel='noopener';});
+    var s=sorted(),i=s.indexOf(p),nav=[];
+    if(i<s.length-1)nav.push('<a class="prev" href="#post/'+esc(s[i+1].id)+'"><span>Older</span>'+esc(s[i+1].title)+'</a>');
+    if(i>0)nav.push('<a class="next" href="#post/'+esc(s[i-1].id)+'"><span>Newer</span>'+esc(s[i-1].title)+'</a>');
+    document.getElementById('post-nav').innerHTML=nav.join('');
+    document.title=p.title+' | Captured by Caleb Carter';
+    return true;
+  }
+
+  /* ---------- Router ---------- */
+  var pages=['home','pricing','about','blog','post'];
+  var titles={home:'Captured by Caleb Carter | Sports Photography',pricing:'Pricing | Captured by Caleb Carter',about:'About Me | Captured by Caleb Carter',blog:'Blog | Captured by Caleb Carter'};
+  var legacy={'blog-sharper-sports-photos':'post/sharper-sports-photos','blog-byu-vs-utah':'post/byu-vs-utah-under-the-lights'};
+  function show(){
+    var h=decodeURIComponent((location.hash||'#home').slice(1));
+    if(legacy[h])h=legacy[h];
+    var target,anchor=null,arg=null;
+    var slash=h.indexOf('/');
+    if(slash>0){target=h.slice(0,slash);arg=h.slice(slash+1);}else target=h;
+    if(pages.indexOf(target)<0){
+      anchor=h?document.getElementById(h):null;
+      var pg=anchor&&anchor.closest('.page');
+      target=pg?pg.id.slice(5):'home';
+    }
+    if(target==='post'&&!renderPost(arg)){target='blog';}
+    if(target==='blog')renderList();
+    pages.forEach(function(p){document.getElementById('page-'+p).hidden=(p!==target);});
+    var navKey=target==='post'?'blog':target;
+    document.querySelectorAll('nav a').forEach(function(a){if(a.dataset.page===navKey)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+    if(target!=='post')document.title=titles[target];
+    if(anchor){anchor.scrollIntoView();}else{window.scrollTo(0,0);}
+  }
+
+  window.addEventListener('hashchange',show);
+  function loadPosts(){
+    return fetch('/posts.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}).then(function(d){POSTS=Array.isArray(d)?d:[];postsReady=true;});
+  }
+  var h0=(location.hash||'').slice(1);
+  if(/^(blog|post)/.test(h0)){loadPosts().then(show);}else{show();loadPosts();}
+
+  /* ---------- Lightbox ---------- */
+  var dlg=document.getElementById('lb'),dImg=dlg.querySelector('img'),dCap=dlg.querySelector('p');
+  document.querySelectorAll('.gallery button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.querySelector('img');dImg.src=i.src;dImg.alt=i.alt;dCap.textContent=b.dataset.cap||'';dCap.hidden=!dCap.textContent;
+      if(dlg.showModal)dlg.showModal();
+    });
+  });
+  dlg.querySelector('.close').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+})();
+</script>
+</body>
+</html>
+
