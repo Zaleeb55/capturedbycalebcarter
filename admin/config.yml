@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: GITHUB_USERNAME/capturedbycalebcarter
+  repo: Zaleeb55/capturedbycalebcarter
   branch: main
   base_url: https://api.netlify.com
   commit_messages:
